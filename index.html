@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Halo Sayang SVG</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            background: url('https://cdn.pixabay.com/animation/2023/04/14/21/51/21-51-20-803_512.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #container {
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: auto;
+            margin-top: 500px;
+            color: #fff;
+            border-radius: 50px;
+            width: 300px;
+            height: 55px;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #ff5277, #ff3e62);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+        }
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        text {
+            font-size: 50px;
+            fill: #362f3c;
+            font-family: 'Dancing Script', cursive;
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a class="button" href="flower.html">Klik Disini &#128522</a>
+    </div>
+    <div id="container">
+        <svg id="halo-svg" data-name="halo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+            <title>Halo Sayang!</title>
+            <text x="350" y="100" id="typing-text"></text>
+        </svg>
+    </div>
+    <script>
+        $(document).ready(function() {
+            let text = "Halo Sayang!";
+            let i = 0;
+            function typeEffect() {
+                if (i < text.length) {
+                    $('#typing-text').text($('#typing-text').text() + text.charAt(i));
+                    i++;
+                    setTimeout(typeEffect, 250); // Kecepatan mengetik
+                }
+            }
+            typeEffect();
+        });
+    </script>
+</body>
+</html>
